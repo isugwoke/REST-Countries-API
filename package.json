@@ -1,0 +1,16 @@
+{
+  "name": "rest-countries-api",
+  "version": "1.0.0",
+  "description": "Countries App",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Sylvester Ugwoke",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.39.2"
+  }
+}

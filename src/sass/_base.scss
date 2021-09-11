@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+  --color-blue-dark-3: hsl(209, 23%, 22%);
+  --color-blue-dark-2: hsl(207, 26%, 17%);
+  --color-blue-dark-1: hsl(200, 15%, 8%);
+
+  --color-gray-dark: hsl(0, 0%, 52%);
+  --color-gray-light: hsl(0, 0%, 98%);
+  --color--white: hsl(0, 0%, 100%);
+}
+
+// Responsive Break-points
+$bp-large: 78.15em; // 1250px
+$bp-medium: 61.25em; // 980px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 31.25em; // 500px
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
