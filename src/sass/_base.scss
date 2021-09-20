@@ -1,13 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
-:root {
-  --color-blue-dark-3: hsl(209, 23%, 22%);
-  --color-blue-dark-2: hsl(207, 26%, 17%);
-  --color-blue-dark-1: hsl(200, 15%, 8%);
+// Theme colors
+.theme-light {
+  --color-accent: hsl(0, 0%, 100%); //
 
-  --color-gray-dark: hsl(0, 0%, 52%);
-  --color-gray-light: hsl(0, 0%, 98%);
-  --color--white: hsl(0, 0%, 100%);
+  --color-tertiary: hsl(0, 0%, 52%); //Light Mode Input
+  --color-primary: hsl(0, 0%, 98%); //Light Mode Background
+  --color-secondary: hsl(200, 15%, 8%); //Light Mode Text
+  --color-white: hsl(0, 0%, 100%); //
+}
+
+.theme-dark {
+  --color-secondary: hsl(0, 0%, 100%); //Light Mode Input
+  --color-tertiary: hsl(0, 0%, 52%); //Light Mode Input
+
+  --color-accent: hsl(209, 23%, 22%); //Dark Mode Elements
+  --color-primary: hsl(207, 26%, 17%); //Dark Mode Background
+  --color-white: hsl(0, 0%, 100%); //
 }
 
 // Responsive Break-points
@@ -36,4 +45,35 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 1.4rem;
   line-height: 1.6;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.outer-container {
+  display: grid;
+
+  grid-template-rows: 7rem 1fr;
+}
+
+.inner-container {
+}
+
+.topbar,
+.main-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.topbar-container {
+  background-color: var(--color-accent);
+  display: flex;
+  align-items: center;
+}
+
+.topbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }

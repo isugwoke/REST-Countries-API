@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,5 +13,81 @@
     <title>Rest Countries API</title>
   </head>
 
-  <body></body>
+  <body>
+    <div class="outer-container">
+      <div class="topbar-container">
+        <div class="topbar">
+          <h1 class="heading--1">Where in the World?</h1>
+          <div class="theme">
+            <svg class="theme__icon">
+              <use xlink:href="src/img/sprite.svg#icon-moon-stroke"></use>
+            </svg>
+            <span class="theme__title">Dark Mode</span>
+          </div>
+        </div>
+      </div>
+      <div class="main-container">
+        <header class="header">
+          <form action="#" class="search">
+            <input
+              type="text"
+              class="search__input"
+              placeholder="Search for a country"
+            />
+            <button class="search__btn">
+              <svg class="search__icon">
+                <use
+                  xlink:href="src/img/sprite.svg#icon-magnifying-glass"
+                ></use>
+              </svg>
+            </button>
+          </form>
+          <div class="filter">
+            <div class="filter__box">
+              <p class="filter__text">Filter by Region</p>
+              <button class="filter__btn">
+                <svg class="filter__icon">
+                  <use
+                    xlink:href="src/img/sprite.svg#icon-chevron-small-down"
+                  ></use>
+                </svg>
+              </button>
+            </div>
+            <ul class="filter__regions">
+              <li class="filter__regions-item filter__regions-item--africa">
+                <a href="#" class="filter__regions--link">Africa</a>
+              </li>
+              <li class="filter__regions-item filter__regions-item--america">
+                <a href="#" class="filter__regions--link">America</a>
+              </li>
+              <li class="filter__regions-item filter__regions-item--asia">
+                <a href="#" class="filter__regions--link">Asia</a>
+              </li>
+              <li class="filter__regions-item filter__regions-item--europe">
+                <a href="#" class="filter__regions--link">Europe</a>
+              </li>
+              <li class="filter__regions-item filter__regions-item--oceania">
+                <a href="#" class="filter__regions--link">Oceania</a>
+              </li>
+            </ul>
+          </div>
+        </header>
+        <main class="countries">
+          <figure class="country">
+            <img
+              src="src/img/flag.jpg"
+              alt="country flag"
+              class="country__img"
+            />
+            <h3 class="country__name">Germany</h3>
+            <figcaption class="country__box">
+              <p class="country__info"><span>Population:</span>81,770,90</p>
+              <p class="country__info"><span>Region:</span>Europe</p>
+              <p class="country__info"><span>Capital:</span>Berlin</p>
+            </figcaption>
+          </figure>
+        </main>
+      </div>
+    </div>
+  </body>
 </html>
