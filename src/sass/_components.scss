@@ -1,3 +1,38 @@
 .heading--1 {
   font-size: 2.3rem;
+  font-weight: 800;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.2s;
+
+  border-radius: 4px;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+
+  &:active {
+    transform: translateY(1.5px);
+  }
+}
+
+.btn-navigation:link,
+.btn-navigation:visited {
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+  font-weight: 300;
+  background-color: var(--color-accent);
+  text-decoration: none;
+  padding: 0.5rem 2.2rem;
+
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  & span {
+    font-size: 1.8rem;
+    margin-right: 0.8rem;
+    font-weight: 800;
+  }
 }

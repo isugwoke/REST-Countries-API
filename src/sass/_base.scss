@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
+:root {
+  --box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.1);
+}
 // Theme colors
 .theme-light {
   --color-accent: hsl(0, 0%, 100%); //
@@ -12,7 +15,7 @@
 
 .theme-dark {
   --color-secondary: hsl(0, 0%, 100%); //Light Mode Input
-  --color-tertiary: hsl(0, 0%, 52%); //Light Mode Input
+  --color-tertiary: hsl(0, 0%, 100%);
 
   --color-accent: hsl(209, 23%, 22%); //Dark Mode Elements
   --color-primary: hsl(207, 26%, 17%); //Dark Mode Background
@@ -53,6 +56,7 @@ body {
   display: grid;
 
   grid-template-rows: 7rem 1fr;
+  grid-template-columns: 1fr;
 }
 
 .inner-container {
@@ -61,19 +65,20 @@ body {
 .topbar,
 .main-container {
   max-width: 120rem;
+  width: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .topbar-container {
   background-color: var(--color-accent);
   display: flex;
   align-items: center;
+
+  box-shadow: var(--box-shadow);
 }
 
-.topbar {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
+.main-container {
+  margin-top: 3rem;
+  padding: 2rem;
 }
