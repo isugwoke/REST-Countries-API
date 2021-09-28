@@ -2,12 +2,24 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
 }
 
 .search {
   flex: 0 0 35%;
-
   position: relative;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex: 0 0 40%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    width: 100%;
+    // flex: 0 0 100%;
+  }
 
   &__input {
     width: 95%;
@@ -19,6 +31,11 @@
 
     box-shadow: var(--box-shadow);
     transition: all 0.2s;
+
+    @media only screen and (max-width: $bp-small) {
+      flex: 0 0 100%;
+      width: 100%;
+    }
   }
 
   &__input:focus {
@@ -59,6 +76,19 @@
 .filter {
   flex: 0 0 15%;
   position: relative;
+
+  @media only screen and (max-width: $bp-large) {
+    flex: 0 0 20%;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    flex: 0 0 30%;
+  }
+  @media only screen and (max-width: $bp-small) {
+    width: 50%;
+
+    margin-top: 4.5rem;
+  }
 
   &__box,
   &__regions {

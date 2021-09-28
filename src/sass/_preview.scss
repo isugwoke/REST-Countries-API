@@ -5,6 +5,18 @@
   grid-template-columns: repeat(4, minmax(20rem, 1fr));
 
   grid-gap: 6rem;
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-columns: repeat(3, minmax(20rem, 1fr));
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: repeat(2, minmax(20rem, 1fr));
+  }
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: minmax(20rem, 1fr);
+    padding: 0 2rem;
+  }
 }
 
 .preview {
