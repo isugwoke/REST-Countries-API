@@ -1,4 +1,6 @@
 .preview-container {
+  position: relative;
+  min-height: 50vh;
   margin-top: 4rem;
 
   display: grid;
@@ -30,6 +32,9 @@
   box-shadow: var(--box-shadow);
   overflow: hidden;
 
+  display: flex;
+  flex-direction: column;
+
   &__link:link,
   &__link:visited {
     color: var(--color-secondary);
@@ -38,12 +43,16 @@
 
   &__img {
     width: 100%;
-    height: 10rem;
+    height: 12rem;
+    display: block;
+    object-fit: cover;
   }
 
   &__details-box {
     padding: 0 2rem;
     padding-bottom: 4rem;
+
+    max-height: 14.2rem;
   }
 
   &__name {

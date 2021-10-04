@@ -21,7 +21,7 @@
     // flex: 0 0 100%;
   }
 
-  &__input {
+  &__field {
     width: 95%;
     padding: 1.5rem 5rem;
     border: none;
@@ -38,14 +38,14 @@
     }
   }
 
-  &__input:focus {
+  &__field:focus {
     width: 100%;
     outline: none;
 
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
   }
 
-  &__input::placeholder {
+  &__field::placeholder {
     font-size: 1.2rem;
     color: currentColor;
   }
