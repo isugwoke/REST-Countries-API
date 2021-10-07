@@ -7,6 +7,7 @@
   }
 
   &__box {
+    position: relative;
     margin-top: 7rem;
 
     display: flex;
@@ -113,9 +114,6 @@
     margin-right: 0.5rem;
     background-color: var(--color-accent);
     padding: 0.3rem 1rem;
-
-    @media only screen and (max-width: $bp-medium) {
-      margin-bottom: 2rem;
-    }
+    margin: 0.5rem;
   }
 }

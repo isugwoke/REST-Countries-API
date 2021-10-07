@@ -16,7 +16,7 @@ class previewView extends View {
   }
   _generateMarkupPreview(preview) {
     return `
-        <a href="./detail.html?#${preview.code}" class="preview__link">
+        <a href="./country.html?#${preview.code}" class="preview__link">
             <figure class="preview">
                     <img
                         src="${preview.flag}"
