@@ -1,5 +1,5 @@
 import { API_URL } from './config';
-import { AJAX } from './helper';
+import { AJAX, formatNumber } from './helper';
 
 export const state = {
   search: {
@@ -9,19 +9,15 @@ export const state = {
   country: {},
 };
 
-const formatNumber = function (number) {
-  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-};
-
-export const loadSearch = async function (query) {
+export const loadSearch = async function (endpoint, query) {
   try {
     state.search.query = query;
-    const data = await AJAX(`${API_URL}name/${query}`);
+    const data = await AJAX(`${API_URL}${endpoint}/${query}`);
 
     state.search.results = data.map(rec => {
       return {
         name: rec.name,
-        population: rec.population,
+        population: formatNumber(rec.population),
         region: rec.region,
         capital: rec.capital,
         flag: rec.flags.svg,

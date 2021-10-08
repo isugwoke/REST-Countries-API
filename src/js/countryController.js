@@ -3,7 +3,7 @@ import countryView from './countryView';
 
 import { async } from 'regenerator-runtime/runtime';
 
-const controlCountry = async function () {
+const controlCountrySearch = async function () {
   try {
     // 1) Get country Code
     const countryCode = window.location.hash.slice(1);
@@ -26,4 +26,4 @@ const controlCountry = async function () {
   }
 };
 
-countryView.addHandlerLoad(controlCountry);
+countryView.addHandlerLoad(controlCountrySearch);

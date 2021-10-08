@@ -4,7 +4,7 @@ class previewView extends View {
   _parentElement = document.querySelector('.preview-container');
 
   _errorMessage =
-    "We couldn't find any countries for your search. Please try another keyword";
+    'Oops! .... There seems to be no match for your search. Pls try another keyword';
 
   _message = '';
 

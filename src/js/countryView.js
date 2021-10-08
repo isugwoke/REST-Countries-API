@@ -3,7 +3,7 @@ import View from './view';
 class CountryView extends View {
   _parentElement = document.querySelector('.country__box');
 
-  _errorMessage = 'There was a problem getting country. Pls try again';
+  _errorMessage = 'Hmmm... Something went Wrong. Pls try again';
 
   _message = '';
 

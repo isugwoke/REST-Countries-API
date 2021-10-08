@@ -31,10 +31,7 @@ export default class View {
   renderError(message = this._errorMessage) {
     const markup = `
         <div class="message">
-              <svg class="message__icon message__icon--error">
-                  <use xlink:href="${icons}#icon-notification"></use>
-              </svg>
-              <p>${message}</p>
+         <span class = 'message__smiley'>:(</span> <span class = message__info> ${message} </span>
         </div>
     `;
 

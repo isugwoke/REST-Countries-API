@@ -76,6 +76,7 @@
 .filter {
   flex: 0 0 15%;
   position: relative;
+  z-index: 1000;
 
   @media only screen and (max-width: $bp-large) {
     flex: 0 0 20%;
@@ -101,6 +102,7 @@
     background-color: var(--color-accent);
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
   }
   &__text {
     font-size: 1.2rem;
@@ -139,23 +141,24 @@
     transition: all 2s;
   }
 
-  &__regions--expanded {
+  &__regions-expanded {
     display: block;
   }
 
+  // &__regions-item {
+  //   cursor: pointer;
+  // }
+
   &__regions-item {
-    cursor: pointer;
-  }
-
-  &__regions-item:not(:last-child) {
-    margin-bottom: 0.3rem;
-  }
-
-  &__regions-link {
+    display: inline-block;
+    width: 100%;
     color: var(--color-secondary);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
 
-    text-decoration: none;
+    cursor: pointer;
+  }
+  &__regions-item:not(:last-child) {
+    margin-bottom: 0.3rem;
   }
 }
