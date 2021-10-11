@@ -5,7 +5,7 @@ export default class View {
 
   render(data) {
     if (!data || (Array.isArray(data) && data.length === 0))
-      return console.log('Problem Displaying Data💥💥💥');
+      return console.error('Something went wrong!');
 
     this._data = data;
     const markup = this._generateMarkup();

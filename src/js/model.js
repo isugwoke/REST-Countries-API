@@ -2,6 +2,7 @@ import { API_URL } from './config';
 import { AJAX, formatNumber } from './helper';
 
 export const state = {
+  allCountries: [],
   search: {
     query: '',
     results: [],
@@ -9,12 +10,11 @@ export const state = {
   country: {},
 };
 
-export const loadSearch = async function (endpoint, query) {
+export const loadAllCountries = async function () {
   try {
-    state.search.query = query;
-    const data = await AJAX(`${API_URL}${endpoint}/${query}`);
+    const data = await AJAX(`${API_URL}all/`);
 
-    state.search.results = data.map(rec => {
+    state.allCountries = data.map(rec => {
       return {
         name: rec.name,
         population: formatNumber(rec.population),
@@ -26,6 +26,31 @@ export const loadSearch = async function (endpoint, query) {
     });
   } catch (err) {
     console.error(`💥💥💥 ${err}`);
+    throw err;
+  }
+};
+
+export const filterSearch = function (query) {
+  try {
+    state.search.query = query;
+
+    state.search.results = state.allCountries.filter(country =>
+      country.name.toLowerCase().includes(query.toLowerCase())
+    );
+    if (state.search.results.length < 1) throw new Error('No match');
+  } catch (err) {
+    throw err;
+  }
+};
+
+export const filterRegion = function (region) {
+  try {
+    state.search.results = state.allCountries.filter(
+      country => country.region.toLowerCase() === region.toLowerCase()
+    );
+
+    if (state.search.results.length < 1) throw new Error('No match');
+  } catch (err) {
     throw err;
   }
 };
