@@ -7,45 +7,44 @@ import filterView from './filterView';
 
 import { async } from 'regenerator-runtime/runtime';
 
-const controlSearch = async function () {
+const loadAndRenderPreview = async function (endpoint, query = '') {
   try {
-    // 1) Get Search Query
-    const query = searchView.getQuery();
-    if (!query) return;
-
-    // 2) Render Spinner
+    // Render Spinner
     previewView.renderSpinner();
 
-    // 3) Load search Result
-    await model.loadSearch('name', query);
+    // Get country(s) Data
+    await model.loadSearch(endpoint, query);
 
-    // 4) Render Search Result to view
-    previewView.render(model.state.search.results);
-  } catch (err) {
-    // Render Error to UI
-    previewView.renderError();
-    console.error(`No country Found. Pls try another Keyword 💥💥💥💥 ${err}`);
-  }
-};
-
-const controlFilter = async function (region) {
-  try {
-    // Render spinner
-    previewView.renderSpinner();
-    // Get country Data
-    await model.loadSearch('continent', region);
-
-    // Render country Data
+    // Render country(s) Data
     previewView.render(model.state.search.results);
   } catch (err) {
     previewView.renderError('Hmmm... Something went wrong. Please try again');
-    console.error(`There was a problem getting region 💥💥💥💥 ${err}`);
+    console.error(`There was a problem getting countries 💥💥💥💥 ${err}`);
   }
+};
+
+const controlLoad = async function () {
+  // Load Data and Render to view
+  await loadAndRenderPreview('all');
+};
+
+const controlSearch = async function () {
+  // 1) Get Search Query
+  const query = searchView.getQuery();
+  if (!query) return;
+
+  // 2) Load Data and Render to view
+  await loadAndRenderPreview('name', query);
+};
+
+const controlFilter = async function (region) {
+  loadAndRenderPreview('continent', region);
 };
 
 const init = function () {
   searchView.addhandlerSearch(controlSearch);
   filterView.addhandlerFilter(controlFilter);
+  previewView.addHandlerLoad(controlLoad);
 };
 
 init();

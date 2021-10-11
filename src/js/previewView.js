@@ -8,6 +8,10 @@ class previewView extends View {
 
   _message = '';
 
+  addHandlerLoad(handler) {
+    window.addEventListener('load', handler);
+  }
+
   _generateMarkup() {
     return `
         ${this._data.map(this._generateMarkupPreview).join('')} 
