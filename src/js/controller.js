@@ -24,26 +24,21 @@ const controlLoad = async function () {
 };
 
 const controlSearch = function () {
-  try {
-    // 1) Get Search Query
-    const query = searchView.getQuery();
-    if (!query) return;
+  // 1) Get Search Query
+  const query = searchView.getQuery();
+  if (!query) return;
 
-    // 2) Filter Countries based on query
-    model.filterSearch(query);
+  // 3) Filter Countries based on query
+  model.filterSearch(query);
 
-    // 3) Render Countures Data to view
-    previewView.render(model.state.search.results);
-  } catch (err) {
-    previewView.renderError(
-      'Oops! .... There seems to be no match for your search. Pls try another keyword'
-    );
-    console.error(`There was a problem getting countries 💥💥💥💥 ${err}`);
-  }
+  // 4) Render Countures Data to view
+  previewView.render(model.state.search.results);
 };
 
 const controlFilter = function (region) {
   try {
+    // 1) Render spinner
+    previewView.renderSpinner();
     // 2) Filter Countries based on
     model.filterRegion(region);
 

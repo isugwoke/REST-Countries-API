@@ -120,8 +120,7 @@
 
     fill: var(--color-secondary);
 
-    // transform: rotate(180deg);
-    // transition: all 0.2s;
+    transition: all 0.2s;
   }
 
   &__icon-rotate {
@@ -137,8 +136,6 @@
     width: 100%;
 
     display: none;
-
-    transition: all 2s;
   }
 
   &__regions-expanded {

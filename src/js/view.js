@@ -5,7 +5,7 @@ export default class View {
 
   render(data) {
     if (!data || (Array.isArray(data) && data.length === 0))
-      return console.error('Something went wrong!');
+      return this.renderError("Hmm!!!... Looks like it does'nt exist");
 
     this._data = data;
     const markup = this._generateMarkup();

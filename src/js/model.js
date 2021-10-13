@@ -31,16 +31,11 @@ export const loadAllCountries = async function () {
 };
 
 export const filterSearch = function (query) {
-  try {
-    state.search.query = query;
+  state.search.query = query;
 
-    state.search.results = state.allCountries.filter(country =>
-      country.name.toLowerCase().includes(query.toLowerCase())
-    );
-    if (state.search.results.length < 1) throw new Error('No match');
-  } catch (err) {
-    throw err;
-  }
+  state.search.results = state.allCountries.filter(country =>
+    country.name.toLowerCase().includes(query.toLowerCase())
+  );
 };
 
 export const filterRegion = function (region) {
