@@ -34,7 +34,10 @@ class ThemeView {
   }
 
   _addHandlerLoadThemeFromStorage() {
-    window.addEventListener('load', this.LoadThemeFromStorage.bind(this));
+    document.addEventListener(
+      'DOMContentLoaded',
+      this.LoadThemeFromStorage.bind(this)
+    );
   }
 }
 
