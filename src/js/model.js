@@ -19,7 +19,7 @@ export const loadAllCountries = async function () {
         name: rec.name,
         population: formatNumber(rec.population),
         region: rec.region,
-        capital: rec.capital,
+        capital: rec.capital ? rec.capital : '',
         flag: rec.flags.svg,
         code: rec.alpha3Code,
       };
@@ -66,14 +66,14 @@ export const loadCountry = async function (code) {
     const data = await AJAX(`${API_URL}alpha/${code}`);
     state.country = {
       name: data.name,
-      nativeName: data.nativeName,
+      nativeName: data.nativeName ? data.nativeName : '',
       population: formatNumber(data.population),
       region: data.region,
       subregion: data.subregion,
-      capital: data.capital,
-      tld: data.topLevelDomain[0],
-      currencies: data.currencies,
-      languages: data.languages,
+      capital: data.capital ? data.capital : '',
+      tld: data.topLevelDomain ? data.topLevelDomain[0] : '',
+      currencies: data.currencies ? data.currencies : [],
+      languages: data.languages ? data.languages : [],
       borders: await loadBorders(data.borders),
       flag: data.flags.svg,
       code: data.alpha3Code,

@@ -4,6 +4,7 @@ import * as model from './model';
 import searchView from './searchView';
 import previewView from './previewView';
 import filterView from './filterView';
+import themeView from './themeView';
 
 import { async } from 'regenerator-runtime/runtime';
 
@@ -18,7 +19,7 @@ const controlLoad = async function () {
     // Render country(s) Data
     previewView.render(model.state.allCountries);
   } catch (err) {
-    previewView.renderError('Hmmm... Something went wrong. Please try again');
+    previewView.renderError(`${err.message}. Please try again`);
     console.error(`There was a problem getting countries 💥💥💥💥 ${err}`);
   }
 };

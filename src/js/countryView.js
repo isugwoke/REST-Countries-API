@@ -39,7 +39,7 @@ class CountryView extends View {
             </div>
             <div class="country__info">
               <span class="country__info-tag">Capital: </span
-              ><span>${this._data.capital ? this._data.capital : ''}</span>
+              ><span>${this._data.capital}</span>
             </div>
           </div>
           <div class="country__info-group">

@@ -1,4 +1,4 @@
-import { API_URL } from './config';
+import { API_URL, TIMEOUT_SEC } from './config';
 
 import { async } from 'regenerator-runtime/runtime';
 
@@ -12,7 +12,7 @@ const timeout = function (s) {
 
 export const AJAX = async function (url) {
   try {
-    const res = await fetch(url);
+    const res = await Promise.race([fetch(url), timeout(TIMEOUT_SEC)]);
     const data = await res.json();
     if (!res.ok) throw new Error(`Problem getting country:  ${res.message}`);
 

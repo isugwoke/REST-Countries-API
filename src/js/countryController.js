@@ -1,5 +1,6 @@
 import * as model from './model';
 import countryView from './countryView';
+import themeView from './themeView';
 
 import { async } from 'regenerator-runtime/runtime';
 
